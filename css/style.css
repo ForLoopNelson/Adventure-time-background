@@ -1,7 +1,3 @@
-/******************************************
-/* HOT GARBAGE - PLEASE DON'T MIMIC THIS CSS
-/*******************************************/
-
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -13,9 +9,7 @@
 
 #logo,
 h2 {
-  height: 300px;
-
-  position: static;
+  height: 160px;
 }
 
 body {
@@ -31,17 +25,26 @@ h2 {
 ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-
-  margin: 3.5em auto;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0 auto;
   list-style: none;
+}
+
+.character-container {
+  position: absolute;
+  display: flex;
+}
+
+ul > div {
+  display: flex;
+  flex-direction: row;
 }
 
 li img {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
   height: 240px;
   width: 110%;
 }
@@ -49,16 +52,6 @@ li img {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-#treehouse {
-  background-image: url(/background-picker/img/treehouse.jpg) no-repeat
-    cover/center;
-}
-#green {
-  background: rgba(0, 253, 81, 1);
-}
-#blue {
-  background: rgba(0, 254, 255);
-}
 
 @media screen and (max-height: 820px) and (min-height: 390px),
   screen and (orientation: landscape) {
@@ -70,10 +63,20 @@ li img {
 
 @media screen and (max-width: 1000px) {
   .container {
-    border: 5px solid red;
     width: 100%;
 
     display: inline-block;
     align-items: baseline;
+  }
+}
+
+@media (max-width: 768px) {
+  ul {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  li img {
+    height: 120px;
   }
 }
